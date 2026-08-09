@@ -1,0 +1,501 @@
+<!doctype html>
+<title>Faiz Home — Proposed First Floor Plan</title>
+<style>
+  @font-face {
+    font-family: "Sheet Mono";
+    src: local("SF Mono"), local("Cascadia Code"), local("Consolas");
+  }
+
+  :root{
+    --paper:#eef0ee;
+    --paper-raised:#f7f8f6;
+    --ink:#1c211f;
+    --ink-soft:#5c645f;
+    --ink-faint:#8b928d;
+    --grid:#d3d7d1;
+    --accent:#1f6f78;
+    --accent-soft:#d9ecec;
+    --line-hair:#c7cbc4;
+    --shadow: 0 1px 2px rgba(28,33,31,.06), 0 8px 24px rgba(28,33,31,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171a18;
+      --paper-raised:#1e2220;
+      --ink:#e8ece8;
+      --ink-soft:#9aa39c;
+      --ink-faint:#616960;
+      --grid:#2b302c;
+      --accent:#5fd0d4;
+      --accent-soft:rgba(95,208,212,.12);
+      --line-hair:#33372f;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171a18;
+    --paper-raised:#1e2220;
+    --ink:#e8ece8;
+    --ink-soft:#9aa39c;
+    --ink-faint:#616960;
+    --grid:#2b302c;
+    --accent:#5fd0d4;
+    --accent-soft:rgba(95,208,212,.12);
+    --line-hair:#33372f;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    padding:2.5rem clamp(1rem,4vw,3.5rem) 4rem;
+  }
+  .wrap{max-width:1320px;margin:0 auto;}
+
+  header.page{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:1.5rem;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:1.1rem;
+    margin-bottom:2rem;
+  }
+  .eyebrow{
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    margin:0 0 .4rem;
+  }
+  h1{
+    margin:0;
+    font-size:clamp(1.5rem,3vw,2.15rem);
+    font-weight:800;
+    letter-spacing:-.01em;
+    text-wrap:balance;
+  }
+  .subtitle{
+    margin:.4rem 0 0;
+    color:var(--ink-soft);
+    font-size:.98rem;
+    max-width:56ch;
+  }
+  .meta{
+    text-align:right;
+    font-family:"Sheet Mono",ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+    font-variant-numeric:tabular-nums;
+  }
+  .meta strong{color:var(--ink);}
+
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:1.75rem;
+    align-items:start;
+  }
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr;}
+  }
+
+  .sheet{
+    background:var(--paper-raised);
+    border:1px solid var(--line-hair);
+    border-radius:6px;
+    box-shadow:var(--shadow);
+    padding:1.25rem 1.25rem .5rem;
+  }
+  .sheet svg{width:100%;height:auto;display:block;}
+  figure{margin:0;}
+  figcaption{
+    font-size:.82rem;
+    color:var(--ink-soft);
+    padding:.9rem .2rem 1.1rem;
+    border-top:1px dashed var(--line-hair);
+    margin-top:.75rem;
+  }
+
+  .side{display:flex;flex-direction:column;gap:1.1rem;}
+  .card{
+    background:var(--paper-raised);
+    border:1px solid var(--line-hair);
+    border-radius:6px;
+    padding:1.1rem 1.2rem;
+    box-shadow:var(--shadow);
+  }
+  .card h2{
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 .85rem;
+    font-weight:700;
+  }
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+  .stat{
+    background:var(--paper);
+    border:1px solid var(--line-hair);
+    border-radius:5px;
+    padding:.65rem .7rem;
+  }
+  .stat .n{
+    font-family:"Sheet Mono",ui-monospace,"SF Mono",Consolas,monospace;
+    font-size:1.28rem;
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+    display:block;
+    color:var(--ink);
+  }
+  .stat .l{font-size:.72rem;color:var(--ink-soft);margin-top:.15rem;display:block;}
+  .stat.full{grid-column:1/-1;}
+
+  .legend{display:flex;flex-direction:column;gap:.55rem;}
+  .legend .row{display:flex;align-items:center;gap:.6rem;font-size:.83rem;color:var(--ink-soft);}
+  .legend .sw{flex:0 0 34px;height:14px;display:flex;align-items:center;justify-content:center;}
+  .legend svg{overflow:visible;}
+  .legend b{color:var(--ink);font-weight:600;}
+
+  .notes{margin:0;padding-left:1.1rem;font-size:.87rem;color:var(--ink-soft);line-height:1.55;}
+  .notes li{margin-bottom:.6rem;}
+  .notes li:last-child{margin-bottom:0;}
+  .notes strong{color:var(--ink);}
+
+  table.compare{width:100%;border-collapse:collapse;font-size:.83rem;}
+  table.compare th,table.compare td{
+    text-align:left;padding:.4rem .3rem;border-bottom:1px solid var(--line-hair);
+    font-variant-numeric:tabular-nums;
+  }
+  table.compare th{color:var(--ink-soft);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;}
+  table.compare td.n{font-family:"Sheet Mono",ui-monospace,"SF Mono",Consolas,monospace;}
+  table.compare tr:last-child td{border-bottom:none;}
+
+  .disclaimer{
+    margin-top:2rem;
+    padding:1rem 1.2rem;
+    border:1px dashed var(--line-hair);
+    border-radius:6px;
+    font-size:.8rem;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .disclaimer strong{color:var(--ink);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <div>
+      <p class="eyebrow">Faiz Home &middot; Ground&nbsp;+&nbsp;1 Conversion</p>
+      <h1>Proposed First Floor Plan</h1>
+      <p class="subtitle">Designed to sit directly on the existing ground floor footprint (1280&nbsp;&times;&nbsp;898&nbsp;cm), with the stair, outer walls and structural core aligned to the plan drawn 17/1/15 — three bedrooms, each with an attached toilet, opening onto a wide front balcony.</p>
+    </div>
+    <div class="meta">
+      Sheet FF&#8209;01 &middot; Rev A<br>
+      <strong>09 Aug 2026</strong><br>
+      Scale noted &middot; all dims in cm
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="sheet">
+      <figure>
+        <svg viewBox="0 0 1900 1180" role="img" aria-label="Proposed first floor plan, 1280 by 898 centimetres, showing bedroom 3 with attached toilet and dressing room, a central stair hall and lobby, a master bedroom suite, a family lounge opening onto an 800 by 172 centimetre front balcony, and bedroom 2 with attached toilet and its own balcony, positioned above the ground floor plan's footprint.">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M1,1 L9,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            </marker>
+          </defs>
+
+          <g fill="none" stroke="currentColor" color="var(--ink-soft)" stroke-width="1.5" font-family="'Sheet Mono',ui-monospace,'SF Mono',Consolas,monospace" font-size="17">
+            <!-- width dimension -->
+            <line x1="190" y1="170" x2="190" y2="140"/>
+            <line x1="1470" y1="170" x2="1470" y2="140"/>
+            <line x1="190" y1="146" x2="1470" y2="146" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+            <text x="830" y="128" text-anchor="middle" fill="var(--ink)" stroke="none" font-weight="700">1280 cm</text>
+            <text x="830" y="128" text-anchor="middle" fill="var(--ink-soft)" stroke="none" font-size="13" dy="16">(12.80 m — matches ground floor width)</text>
+
+            <!-- depth dimension -->
+            <line x1="1470" y1="170" x2="1495" y2="170"/>
+            <line x1="1470" y1="1068" x2="1495" y2="1068"/>
+            <line x1="1501" y1="170" x2="1501" y2="1068" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+            <text x="1524" y="619" text-anchor="middle" fill="var(--ink)" stroke="none" font-weight="700" transform="rotate(90 1524 619)">898 cm</text>
+          </g>
+
+          <g transform="translate(190,170)" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+
+            <!-- room fills -->
+            <g stroke="none">
+              <rect x="0" y="0" width="430" height="380" fill="var(--paper)"/>
+              <rect x="800" y="0" width="480" height="380" fill="var(--paper)"/>
+              <rect x="0" y="520" width="800" height="206" fill="var(--paper)"/>
+              <rect x="800" y="520" width="480" height="260" fill="var(--paper)"/>
+              <rect x="0" y="726" width="800" height="172" fill="var(--accent-soft)"/>
+              <rect x="800" y="780" width="330" height="118" fill="var(--accent-soft)"/>
+            </g>
+
+            <!-- stair flight graphic -->
+            <g stroke="var(--ink-soft)" stroke-width="1.3">
+              <rect x="460" y="18" width="220" height="270" fill="none" stroke="var(--line-hair)"/>
+              <line x1="460" y1="45" x2="680" y2="45"/>
+              <line x1="460" y1="72" x2="680" y2="72"/>
+              <line x1="460" y1="99" x2="680" y2="99"/>
+              <line x1="460" y1="126" x2="680" y2="126"/>
+              <line x1="460" y1="153" x2="680" y2="153"/>
+              <line x1="460" y1="180" x2="680" y2="180"/>
+              <line x1="460" y1="207" x2="680" y2="207"/>
+              <line x1="460" y1="234" x2="680" y2="234"/>
+              <line x1="460" y1="261" x2="680" y2="261"/>
+              <path d="M540,283 L540,255 L525,268 Z" fill="var(--ink-soft)" stroke="none"/>
+            </g>
+            <text x="570" y="310" text-anchor="middle" font-size="14" fill="var(--ink-soft)">DN to Ground Floor</text>
+
+            <!-- room labels -->
+            <g fill="var(--ink)" text-anchor="middle">
+              <text x="215" y="150" font-size="20" font-weight="700">BEDROOM 3</text>
+              <text x="215" y="174" font-size="14" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">430 x 380</text>
+
+              <text x="75" y="450" font-size="13" font-weight="700">TOILET</text>
+              <text x="75" y="466" font-size="11" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">150x140</text>
+
+              <text x="290" y="450" font-size="13" font-weight="700">DRESS</text>
+              <text x="290" y="466" font-size="11" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">280x140</text>
+
+              <text x="615" y="420" font-size="18" font-weight="700">STAIR HALL</text>
+              <text x="615" y="442" font-size="13" fill="var(--ink-soft)">/ LOBBY</text>
+
+              <text x="1040" y="150" font-size="20" font-weight="700">MASTER BEDROOM</text>
+              <text x="1040" y="174" font-size="14" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">480 x 380</text>
+
+              <text x="950" y="450" font-size="13" font-weight="700">DRESS</text>
+              <text x="950" y="466" font-size="11" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">300x140</text>
+
+              <text x="1190" y="450" font-size="13" font-weight="700">TOILET</text>
+              <text x="1190" y="466" font-size="11" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">180x140</text>
+
+              <text x="400" y="615" font-size="19" font-weight="700">FAMILY LOUNGE</text>
+              <text x="400" y="638" font-size="14" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">800 x 206</text>
+
+              <text x="400" y="800" font-size="16" font-weight="700" fill="var(--accent)">BALCONY — OPEN</text>
+              <text x="400" y="822" font-size="13" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">800 x 172</text>
+
+              <text x="1040" y="635" font-size="19" font-weight="700">BEDROOM 2</text>
+              <text x="1040" y="658" font-size="14" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">480 x 260</text>
+
+              <text x="965" y="832" font-size="14" font-weight="700" fill="var(--accent)">BALCONY</text>
+              <text x="965" y="852" font-size="12" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">330x118</text>
+
+              <text x="1205" y="832" font-size="13" font-weight="700">TOILET</text>
+              <text x="1205" y="850" font-size="11" fill="var(--ink-soft)" font-family="'Sheet Mono',monospace">150x118</text>
+            </g>
+
+            <!-- exterior walls (segments skip window openings) -->
+            <g stroke="var(--ink)" stroke-width="7" stroke-linecap="square">
+              <line x1="0" y1="0" x2="120" y2="0"/>
+              <line x1="280" y1="0" x2="520" y2="0"/>
+              <line x1="680" y1="0" x2="950" y2="0"/>
+              <line x1="1150" y1="0" x2="1280" y2="0"/>
+
+              <line x1="1280" y1="0" x2="1280" y2="80"/>
+              <line x1="1280" y1="260" x2="1280" y2="420"/>
+              <line x1="1280" y1="460" x2="1280" y2="560"/>
+              <line x1="1280" y1="740" x2="1280" y2="810"/>
+              <line x1="1280" y1="850" x2="1280" y2="898"/>
+
+              <line x1="0" y1="0" x2="0" y2="100"/>
+              <line x1="0" y1="260" x2="0" y2="410"/>
+              <line x1="0" y1="450" x2="0" y2="898"/>
+
+              <line x1="1130" y1="898" x2="1280" y2="898"/>
+            </g>
+
+            <!-- balcony railing (open south facade) -->
+            <g stroke="var(--accent)" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round">
+              <line x1="0" y1="898" x2="1130" y2="898"/>
+            </g>
+            <g stroke="var(--accent)" stroke-width="2.4">
+              <line x1="40" y1="888" x2="40" y2="898"/>
+              <line x1="180" y1="888" x2="180" y2="898"/>
+              <line x1="320" y1="888" x2="320" y2="898"/>
+              <line x1="460" y1="888" x2="460" y2="898"/>
+              <line x1="600" y1="888" x2="600" y2="898"/>
+              <line x1="740" y1="888" x2="740" y2="898"/>
+              <line x1="880" y1="888" x2="880" y2="898"/>
+              <line x1="1020" y1="888" x2="1020" y2="898"/>
+            </g>
+
+            <!-- interior walls -->
+            <g stroke="var(--ink)" stroke-width="3.5" stroke-linecap="square">
+              <line x1="430" y1="0" x2="430" y2="400"/>
+              <line x1="800" y1="0" x2="800" y2="400"/>
+              <line x1="0" y1="380" x2="30" y2="380"/>
+              <line x1="130" y1="380" x2="200" y2="380"/>
+              <line x1="320" y1="380" x2="430" y2="380"/>
+              <line x1="150" y1="380" x2="150" y2="520"/>
+              <line x1="800" y1="380" x2="900" y2="380"/>
+              <line x1="1050" y1="380" x2="1280" y2="380"/>
+              <line x1="1100" y1="380" x2="1100" y2="420"/>
+              <line x1="0" y1="520" x2="430" y2="520"/>
+              <line x1="430" y1="520" x2="500" y2="520"/>
+              <line x1="730" y1="520" x2="800" y2="520"/>
+              <line x1="800" y1="520" x2="800" y2="560"/>
+              <line x1="800" y1="660" x2="800" y2="780"/>
+              <line x1="800" y1="780" x2="850" y2="780"/>
+              <line x1="1080" y1="780" x2="1130" y2="780"/>
+              <line x1="1130" y1="780" x2="1160" y2="780"/>
+              <line x1="1250" y1="780" x2="1280" y2="780"/>
+              <line x1="1130" y1="780" x2="1130" y2="898"/>
+              <line x1="0" y1="726" x2="150" y2="726"/>
+              <line x1="650" y1="726" x2="800" y2="726"/>
+            </g>
+            <g stroke="var(--ink-faint)" stroke-width="1.6" stroke-dasharray="3 6">
+              <line x1="800" y1="780" x2="800" y2="898"/>
+            </g>
+
+            <!-- open / no-door connections -->
+            <g stroke="var(--ink-faint)" stroke-width="1.4" stroke-dasharray="4 5">
+              <line x1="900" y1="380" x2="1050" y2="380"/>
+              <line x1="500" y1="520" x2="730" y2="520"/>
+            </g>
+            <g fill="var(--ink-faint)" text-anchor="middle" font-size="11" font-weight="600">
+              <text x="975" y="373">OPEN</text>
+              <text x="615" y="513">OPEN</text>
+            </g>
+
+            <!-- door swings -->
+            <g fill="none" stroke="var(--ink)" stroke-width="1.6">
+              <path d="M30,380 L30,480"/>
+              <path d="M130,380 A100,100 0 0,1 30,480"/>
+
+              <path d="M200,380 L200,500"/>
+              <path d="M320,380 A120,120 0 0,1 200,500"/>
+
+              <path d="M430,400 L550,400"/>
+              <path d="M430,520 A120,120 0 0,0 550,400"/>
+
+              <path d="M800,400 L680,400"/>
+              <path d="M800,520 A120,120 0 0,1 680,400"/>
+
+              <path d="M1100,420 L1200,420"/>
+              <path d="M1100,520 A100,100 0 0,0 1200,420"/>
+
+              <path d="M800,560 L900,560"/>
+              <path d="M800,660 A100,100 0 0,0 900,560"/>
+
+              <path d="M1160,780 L1160,870"/>
+              <path d="M1250,780 A90,90 0 0,1 1160,870"/>
+            </g>
+            <g fill="var(--ink-soft)" text-anchor="middle" font-size="11" font-weight="600">
+              <text x="80" y="398">d</text>
+              <text x="260" y="398">d</text>
+              <text x="490" y="470">D1</text>
+              <text x="740" y="470">D1</text>
+              <text x="1150" y="470">d</text>
+              <text x="850" y="640">D1</text>
+              <text x="1205" y="820">d</text>
+            </g>
+
+            <!-- sliding glass doors -->
+            <g stroke="var(--accent)" stroke-width="2">
+              <line x1="150" y1="722" x2="650" y2="722"/>
+              <line x1="150" y1="730" x2="650" y2="730"/>
+              <line x1="850" y1="776" x2="1080" y2="776"/>
+              <line x1="850" y1="784" x2="1080" y2="784"/>
+            </g>
+            <g fill="var(--accent)" text-anchor="middle" font-size="12" font-weight="700">
+              <text x="400" y="712">SD</text>
+              <text x="965" y="766">SD</text>
+            </g>
+
+            <!-- windows / vents -->
+            <g stroke="var(--ink)" stroke-width="2">
+              <line x1="152" y1="-5" x2="152" y2="5"/><line x1="184" y1="-5" x2="184" y2="5"/><line x1="216" y1="-5" x2="216" y2="5"/><line x1="248" y1="-5" x2="248" y2="5"/>
+              <line x1="-5" y1="132" x2="5" y2="132"/><line x1="-5" y1="164" x2="5" y2="164"/><line x1="-5" y1="196" x2="5" y2="196"/><line x1="-5" y1="228" x2="5" y2="228"/>
+              <line x1="-5" y1="423" x2="5" y2="423"/><line x1="-5" y1="437" x2="5" y2="437"/>
+              <line x1="552" y1="-5" x2="552" y2="5"/><line x1="584" y1="-5" x2="584" y2="5"/><line x1="616" y1="-5" x2="616" y2="5"/><line x1="648" y1="-5" x2="648" y2="5"/>
+              <line x1="990" y1="-5" x2="990" y2="5"/><line x1="1030" y1="-5" x2="1030" y2="5"/><line x1="1070" y1="-5" x2="1070" y2="5"/><line x1="1110" y1="-5" x2="1110" y2="5"/>
+              <line x1="1275" y1="116" x2="1285" y2="116"/><line x1="1275" y1="152" x2="1285" y2="152"/><line x1="1275" y1="188" x2="1285" y2="188"/><line x1="1275" y1="224" x2="1285" y2="224"/>
+              <line x1="1275" y1="433" x2="1285" y2="433"/><line x1="1275" y1="447" x2="1285" y2="447"/>
+              <line x1="1275" y1="596" x2="1285" y2="596"/><line x1="1275" y1="632" x2="1285" y2="632"/><line x1="1275" y1="668" x2="1285" y2="668"/><line x1="1275" y1="704" x2="1285" y2="704"/>
+              <line x1="1275" y1="823" x2="1285" y2="823"/><line x1="1275" y1="837" x2="1285" y2="837"/>
+            </g>
+            <g fill="var(--ink-soft)" text-anchor="middle" font-size="12" font-weight="600">
+              <text x="200" y="-12">W3</text>
+              <text x="-14" y="185" transform="rotate(-90 -14 185)">W3</text>
+              <text x="-14" y="440" transform="rotate(-90 -14 440)">V</text>
+              <text x="615" y="-12">V</text>
+              <text x="1050" y="-12">W4</text>
+              <text x="1296" y="170" transform="rotate(90 1296 170)">W3</text>
+              <text x="1296" y="440" transform="rotate(90 1296 440)">V</text>
+              <text x="1296" y="650" transform="rotate(90 1296 650)">W3</text>
+              <text x="1296" y="840" transform="rotate(90 1296 840)">V</text>
+            </g>
+
+            <!-- outer boundary highlight (structural alignment cue) -->
+            <rect x="0" y="0" width="1280" height="898" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="1 0" opacity="0"/>
+          </g>
+        </svg>
+        <figcaption>Proposed first floor: three bedrooms (Bedroom&nbsp;3 and Master share the same footprint as the ground floor's two bedrooms and top-right corner; Bedroom&nbsp;2 sits above the ground floor's second bedroom), each with an attached toilet, arranged around a central stair hall that lands directly above the existing ground-floor staircase. The family lounge opens onto an 800&nbsp;&times;&nbsp;172&nbsp;cm balcony built over the ground floor's porch, drawing room and sit-out.</figcaption>
+      </figure>
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h2>Area Summary</h2>
+        <div class="stats">
+          <div class="stat"><span class="n">97.3&nbsp;m&sup2;</span><span class="l">Enclosed built-up (1047 sq.ft)</span></div>
+          <div class="stat"><span class="n">17.6&nbsp;m&sup2;</span><span class="l">Open balconies (190 sq.ft)</span></div>
+          <div class="stat"><span class="n">3</span><span class="l">Bedrooms, all attached</span></div>
+          <div class="stat"><span class="n">3</span><span class="l">Toilets + 2 dressing areas</span></div>
+          <div class="stat full"><span class="n">114.94&nbsp;m&sup2;</span><span class="l">Total footprint — identical to the ground floor's 1280&nbsp;&times;&nbsp;898&nbsp;cm plinth, so every first-floor wall lands on a ground-floor wall below</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ground vs. First Floor</h2>
+        <table class="compare">
+          <thead><tr><th>Room</th><th>GF</th><th>FF</th></tr></thead>
+          <tbody>
+            <tr><td>Bedrooms</td><td class="n">2</td><td class="n">3</td></tr>
+            <tr><td>Attached toilets</td><td class="n">0</td><td class="n">3</td></tr>
+            <tr><td>Kitchen</td><td class="n">1</td><td class="n">&mdash;</td></tr>
+            <tr><td>Open sit-out / balcony</td><td class="n">474&times;172</td><td class="n">800&times;172</td></tr>
+            <tr><td>Stair</td><td class="n">landing up</td><td class="n">landing down</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Legend</h2>
+        <div class="legend">
+          <div class="row"><span class="sw"><svg width="34" height="14"><path d="M2,7 L10,7 A8,8 0 0,1 18,-1" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" transform="translate(0,7)"/></svg></span><span><b>D1 / d</b> &mdash; hinged door (major / minor)</span></div>
+          <div class="row"><span class="sw"><svg width="34" height="14"><line x1="2" y1="5" x2="30" y2="5" stroke="var(--accent)" stroke-width="2"/><line x1="2" y1="10" x2="30" y2="10" stroke="var(--accent)" stroke-width="2"/></svg></span><span><b>SD</b> &mdash; sliding glass door</span></div>
+          <div class="row"><span class="sw"><svg width="34" height="14"><line x1="2" y1="7" x2="30" y2="7" stroke="var(--ink-faint)" stroke-width="1.4" stroke-dasharray="4 4"/></svg></span><span><b>OPEN</b> &mdash; no door, open-plan</span></div>
+          <div class="row"><span class="sw"><svg width="34" height="14"><line x1="4" y1="7" x2="8" y2="7" stroke="var(--ink)" stroke-width="2"/><line x1="12" y1="7" x2="16" y2="7" stroke="var(--ink)" stroke-width="2"/><line x1="20" y1="7" x2="24" y2="7" stroke="var(--ink)" stroke-width="2"/></svg></span><span><b>W3 / W4 / V</b> &mdash; window / vent, by width</span></div>
+          <div class="row"><span class="sw"><svg width="34" height="14"><line x1="2" y1="10" x2="30" y2="10" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="1.5 6"/></svg></span><span><b>Railing</b> &mdash; open glass balustrade</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Design Notes</h2>
+        <ol class="notes">
+          <li><strong>Stair kept in place.</strong> The stair hall sits directly above the ground floor's existing staircase, so the flight can simply continue upward without moving any load-bearing wall.</li>
+          <li><strong>Perimeter walls align.</strong> Every exterior wall of this plan traces the ground floor's 1280&nbsp;&times;&nbsp;898&nbsp;cm outline, so the first floor loads transfer straight down to the ground floor walls and footing.</li>
+          <li><strong>Balcony replaces porch/sit-out.</strong> The wide front balcony sits over the ground floor's porch, drawing room and sit-out — those spans will need an RCC beam or steel joists sized for the balcony above; confirm with your structural engineer.</li>
+          <li><strong>Every bedroom is en-suite.</strong> Each of the three bedrooms gets its own attached toilet and a small dressing buffer, which the ground floor didn't have.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>This is a conceptual space-planning proposal, not a construction drawing.</strong> Wall thicknesses, beam sizes, column positions and services (electrical, plumbing, drainage) are not engineered here. Before building, have a licensed structural engineer verify that the ground floor's walls, columns and footing can carry a second storey, and have an architect finalise dimensioned working drawings.
+  </div>
+</div>
