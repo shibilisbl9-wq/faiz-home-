@@ -1,0 +1,352 @@
+<!doctype html>
+<title>Faiz Home — 3D Massing View</title>
+<style>
+  :root{
+    --paper:#eef0ee;
+    --paper-raised:#f7f8f6;
+    --ink:#1c211f;
+    --ink-soft:#5c645f;
+    --line-hair:#c7cbc4;
+    --accent:#1f6f78;
+    --gf-accent:#8a4b1f;
+    --shadow: 0 1px 2px rgba(28,33,31,.06), 0 8px 24px rgba(28,33,31,.08);
+    --sky-top:#c9d6d2;
+    --sky-bot:#eef0ee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171a18; --paper-raised:#1e2220; --ink:#e8ece8; --ink-soft:#9aa39c;
+      --line-hair:#33372f; --accent:#5fd0d4; --gf-accent:#e2a26b;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+      --sky-top:#20302d; --sky-bot:#171a18;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171a18; --paper-raised:#1e2220; --ink:#e8ece8; --ink-soft:#9aa39c;
+    --line-hair:#33372f; --accent:#5fd0d4; --gf-accent:#e2a26b;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+    --sky-top:#20302d; --sky-bot:#171a18;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    padding:2.2rem clamp(1rem,4vw,3rem) 3rem;
+  }
+  .wrap{max-width:1200px;margin:0 auto;}
+  header{
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.2rem;
+    border-bottom:2px solid var(--ink); padding-bottom:1rem; margin-bottom:1.4rem;
+  }
+  .eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .35rem;}
+  h1{margin:0;font-size:clamp(1.4rem,3vw,1.95rem);font-weight:800;letter-spacing:-.01em;text-wrap:balance;}
+  .subtitle{margin:.4rem 0 0;color:var(--ink-soft);font-size:.94rem;max-width:62ch;}
+
+  .panel{
+    position:relative;
+    background:linear-gradient(180deg,var(--sky-top),var(--sky-bot));
+    border:1px solid var(--line-hair); border-radius:8px; box-shadow:var(--shadow);
+    overflow:hidden; touch-action:none; user-select:none;
+    height:min(72vh,640px);
+  }
+  .stage{position:absolute; inset:0; perspective:1900px; perspective-origin:50% 62%;}
+  .scene{
+    position:absolute; left:50%; top:56%;
+    transform-style:preserve-3d;
+    cursor:grab;
+  }
+  .scene:active{cursor:grabbing;}
+
+  .wall{position:absolute; top:0; left:0; backface-visibility:visible; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);}
+  .floor-slab{position:absolute; top:0; left:0;}
+  .rail{position:absolute; top:0; left:0; opacity:.9;}
+  .glass{position:absolute; top:0; left:0; background:rgba(95,208,212,.28); box-shadow:inset 0 0 0 1px rgba(95,208,212,.55);}
+
+  .wall-gf-a{background:#c7ccc3;} .wall-gf-b{background:#adb3a7;}
+  .wall-ff-a{background:#d8d0bf;} .wall-ff-b{background:#bdb4a1;}
+  .floor-gf{background:#e2e5df;} .floor-ff{background:#e9e3d5;} .floor-roof{background:#9aa39c;}
+  .rail-gf{background:var(--gf-accent);} .rail-ff{background:var(--accent);}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .wall-gf-a{background:#4a4f47;} :root:not([data-theme="light"]) .wall-gf-b{background:#383c35;}
+    :root:not([data-theme="light"]) .wall-ff-a{background:#544f42;} :root:not([data-theme="light"]) .wall-ff-b{background:#403c32;}
+    :root:not([data-theme="light"]) .floor-gf{background:#23271f;} :root:not([data-theme="light"]) .floor-ff{background:#282419;} :root:not([data-theme="light"]) .floor-roof{background:#31352c;}
+  }
+  :root[data-theme="dark"] .wall-gf-a{background:#4a4f47;} :root[data-theme="dark"] .wall-gf-b{background:#383c35;}
+  :root[data-theme="dark"] .wall-ff-a{background:#544f42;} :root[data-theme="dark"] .wall-ff-b{background:#403c32;}
+  :root[data-theme="dark"] .floor-gf{background:#23271f;} :root[data-theme="dark"] .floor-ff{background:#282419;} :root[data-theme="dark"] .floor-roof{background:#31352c;}
+
+  .hint{
+    position:absolute; left:14px; bottom:12px; font-size:.74rem; color:var(--ink-soft);
+    background:var(--paper-raised); border:1px solid var(--line-hair); border-radius:99px;
+    padding:.3rem .75rem; pointer-events:none;
+  }
+
+  .controls{
+    display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem;
+  }
+  .controls button{
+    font:inherit; font-size:.82rem; font-weight:600; color:var(--ink);
+    background:var(--paper-raised); border:1px solid var(--line-hair); border-radius:99px;
+    padding:.45rem 1rem; cursor:pointer;
+  }
+  .controls button.active{border-color:var(--accent); color:var(--accent);}
+  .controls button:hover{border-color:var(--ink-soft);}
+
+  .legend{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.9rem;font-size:.82rem;color:var(--ink-soft);}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem;}
+  .swatch{width:13px;height:13px;border-radius:3px;display:inline-block;}
+
+  .notes{
+    margin-top:1.6rem; padding:1rem 1.2rem; border:1px dashed var(--line-hair); border-radius:6px;
+    font-size:.85rem; color:var(--ink-soft); line-height:1.6;
+  }
+  .notes strong{color:var(--ink);}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <p class="eyebrow">Faiz Home &middot; Ground&nbsp;+&nbsp;1 Conversion</p>
+      <h1>3D Massing View</h1>
+      <p class="subtitle">A block model built straight from the ground and first floor plans — same walls, same 1280&nbsp;&times;&nbsp;898&nbsp;cm footprint, same grid. Drag to orbit, scroll to zoom.</p>
+    </div>
+  </header>
+
+  <div class="panel" id="panel">
+    <div class="stage" id="stage">
+      <div class="scene" id="scene"></div>
+    </div>
+    <div class="hint">drag to orbit &middot; scroll to zoom</div>
+  </div>
+
+  <div class="controls">
+    <button data-view="iso" class="active">Isometric</button>
+    <button data-view="front">Front</button>
+    <button data-view="top">Top</button>
+    <button data-floors="both" class="active">Both floors</button>
+    <button data-floors="gf">Ground only</button>
+    <button data-floors="ff">First only</button>
+    <button data-roof="on" class="active">Roof on</button>
+  </div>
+
+  <div class="legend">
+    <span><i class="swatch" style="background:#c7ccc3"></i>Ground floor walls</span>
+    <span><i class="swatch" style="background:#d8d0bf"></i>First floor walls</span>
+    <span><i class="swatch" style="background:rgba(95,208,212,.5)"></i>Window glazing</span>
+    <span><i class="swatch" style="background:#8a4b1f"></i>Ground floor railing (porch)</span>
+    <span><i class="swatch" style="background:#1f6f78"></i>First floor railing (balcony)</span>
+  </div>
+
+  <div class="notes">
+    <strong>What this shows:</strong> exterior and interior walls, floor slabs and a flat roof, extruded from the two plans at 55&nbsp;px per metre. Window openings get a sill, a glazed band and a lintel; doors are left open full-height; the porch and balcony fronts are shown as low railings. The staircase connecting the floors isn't modelled here — treat this as a massing/volume study, not a structural or MEP drawing.
+  </div>
+</div>
+
+<script>
+(function(){
+  const SCALE = 0.5;      // px per cm
+  const WALL_H = 300;     // cm, floor-to-floor wall height
+  const SLAB_T = 14;      // cm, floor slab thickness (visual)
+  const SILL_H = 90;      // cm
+  const LINTEL_H = 60;    // cm (band 240-300)
+  const RAIL_H = 90;      // cm
+
+  const scene = document.getElementById('scene');
+  const gfWalls = [], ffWalls = [], roofFloor = [];
+  const gfGroup = [], ffGroup = []; // element refs for show/hide
+
+  // Recenter the model in local space so the default rotation pivot
+  // (local origin) sits at the building's true centroid, not its NW corner.
+  const CX = (1280*SCALE)/2;
+  const CZ = (898*SCALE)/2;
+  const CY = (2*WALL_H*SCALE)/2;
+
+  function el(cls){ const d=document.createElement('div'); d.className=cls; return d; }
+
+  // ---- wall / floor builders -------------------------------------------
+  function addWall(x1,z1,x2,z2,heightCm,bottomY,cls,store){
+    const dx=x2-x1, dz=z2-z1;
+    const len=Math.hypot(dx,dz);
+    if(len<=0) return;
+    const angle = Math.atan2(dz,dx)*180/Math.PI;
+    const shadeCls = Math.abs(dx)>=Math.abs(dz) ? (cls+'-a') : (cls+'-b');
+    const d = el('wall '+shadeCls);
+    d.style.width = (len*SCALE)+'px';
+    d.style.height = (heightCm*SCALE)+'px';
+    d.style.transformOrigin = '0 0';
+    d.style.transform = `translate3d(${x1*SCALE-CX}px, ${bottomY-heightCm*SCALE+CY}px, ${z1*SCALE-CZ}px) rotateY(${-angle}deg)`;
+    scene.appendChild(d);
+    store.push(d);
+    return d;
+  }
+
+  function addGlass(x1,z1,x2,z2,bottomY,store){
+    const dx=x2-x1, dz=z2-z1;
+    const len=Math.hypot(dx,dz);
+    if(len<=0) return;
+    const angle = Math.atan2(dz,dx)*180/Math.PI;
+    const d = el('glass');
+    d.style.width = (len*SCALE)+'px';
+    d.style.height = ((240-SILL_H)*SCALE)+'px';
+    d.style.transformOrigin = '0 0';
+    d.style.transform = `translate3d(${x1*SCALE-CX}px, ${bottomY-240*SCALE+CY}px, ${z1*SCALE-CZ}px) rotateY(${-angle}deg)`;
+    scene.appendChild(d);
+    store.push(d);
+  }
+
+  function addRail(x1,z1,x2,z2,bottomY,cls,store){
+    addWall(x1,z1,x2,z2,RAIL_H,bottomY,cls==='gf'?'rail-gf':'rail-ff', store);
+  }
+
+  function addFloor(x,z,w,d,y,cls,store){
+    const f = el('floor-slab '+cls);
+    f.style.width = (w*SCALE)+'px';
+    f.style.height = (d*SCALE)+'px';
+    f.style.transformOrigin = '0 0';
+    f.style.transform = `translate3d(${x*SCALE-CX}px, ${y+CY}px, ${z*SCALE-CZ}px) rotateX(90deg)`;
+    scene.appendChild(f);
+    store.push(f);
+  }
+
+  function gapsOf(start,end,solids){
+    let gaps=[]; let cursor=start;
+    for(const [s,e] of solids){ if(s>cursor) gaps.push([cursor,s]); cursor=Math.max(cursor,e); }
+    if(cursor<end) gaps.push([cursor,end]);
+    return gaps;
+  }
+
+  // horizontal-run exterior wall (constant z), with window treatment on gaps
+  function hExtWall(z, x0, x1, solids, baseY, cls, store){
+    for(const [s,e] of solids) addWall(s,z,e,z,WALL_H,baseY,cls,store);
+    for(const [s,e] of gapsOf(x0,x1,solids)){
+      if(e-s<=0) continue;
+      addWall(s,z,e,z,SILL_H,baseY,cls,store);
+      addWall(s,z,e,z,LINTEL_H,baseY-240*SCALE,cls,store);
+      addGlass(s,z,e,z,baseY,store);
+    }
+  }
+  // vertical-run exterior wall (constant x), with window treatment on gaps
+  function vExtWall(x, z0, z1, solids, baseY, cls, store){
+    for(const [s,e] of solids) addWall(x,s,x,e,WALL_H,baseY,cls,store);
+    for(const [s,e] of gapsOf(z0,z1,solids)){
+      if(e-s<=0) continue;
+      addWall(x,s,x,e,SILL_H,baseY,cls,store);
+      addWall(x,s,x,e,LINTEL_H,baseY-240*SCALE,cls,store);
+      addGlass(x,s,x,e,baseY,store);
+    }
+  }
+
+  // ---- ground floor -------------------------------------------------------
+  const GF_BASE = 0;
+  hExtWall(0, 0, 1280, [[0,40],[160,240],[360,420],[480,580],[730,830],[890,970],[1230,1280]], GF_BASE, 'wall-gf', gfWalls);
+  vExtWall(1280, 0, 898, [[0,40],[260,600],[860,898]], GF_BASE, 'wall-gf', gfWalls);
+  vExtWall(0, 0, 898, [[0,200],[260,898]], GF_BASE, 'wall-gf', gfWalls);
+  // south exterior: solid wings + open porch railing
+  addWall(752,898,920,898,WALL_H,GF_BASE,'wall-gf',gfWalls);
+  addWall(920,898,1280,898,WALL_H,GF_BASE,'wall-gf',gfWalls);
+  addRail(0,898,300,898,GF_BASE,'gf',gfWalls);
+
+  const gfInterior = [
+    [200,0,200,60],[200,220,200,480],[400,0,400,140],[500,0,500,140],
+    [0,140,60,140],[140,140,500,140],[500,502,500,568],[0,480,500,480],
+    [810,0,810,150],[810,250,810,568],[920,0,920,300],[920,300,920,400],
+    [920,490,920,568],[920,300,1000,300],[1090,300,1280,300],
+    [920,568,1000,568],[1090,568,1280,568],[300,568,300,700],[300,800,300,898],
+    [730,568,730,650],[730,750,730,898],[810,568,820,568],[900,568,920,568]
+  ];
+  gfInterior.forEach(([x1,z1,x2,z2])=>addWall(x1,z1,x2,z2,WALL_H,GF_BASE,'wall-gf',gfWalls));
+
+  // sit-out low parapet (open porch-like projection)
+  addRail(278,1070,752,1070,GF_BASE,'gf',gfWalls);
+  addWall(278,898,278,1070,RAIL_H,GF_BASE,'wall-gf',gfWalls);
+  addWall(752,898,752,1070,RAIL_H,GF_BASE,'wall-gf',gfWalls);
+
+  addFloor(0,0,1280,898,GF_BASE,'floor-gf',gfWalls);
+  addFloor(278,898,474,172,GF_BASE,'floor-gf',gfWalls);
+
+  // ---- first floor ----------------------------------------------------
+  const FF_BASE = -(WALL_H*SCALE);
+  hExtWall(0, 0, 1280, [[0,100],[280,580],[730,830],[890,970],[1230,1280]], FF_BASE, 'wall-ff', ffWalls);
+  vExtWall(1280, 0, 898, [[0,40],[260,440],[520,620],[670,898]], FF_BASE, 'wall-ff', ffWalls);
+  vExtWall(0, 0, 898, [[0,100],[260,898]], FF_BASE, 'wall-ff', ffWalls);
+  addWall(730,898,920,898,WALL_H,FF_BASE,'wall-ff',ffWalls);
+  addWall(920,898,1280,898,WALL_H,FF_BASE,'wall-ff',ffWalls);
+  addRail(0,898,300,898,FF_BASE,'ff',ffWalls);
+
+  const ffInterior = [
+    [500,0,500,400],[500,450,500,568],[0,400,20,400],[120,400,250,400],
+    [370,400,500,400],[180,400,180,568],[810,0,810,150],[810,450,810,568],
+    [920,0,920,350],[920,460,920,568],[920,300,1050,300],[1200,300,1280,300],
+    [920,420,1050,420],[1200,420,1280,420],[300,568,300,650],[300,800,300,898],
+    [730,568,730,650],[730,750,730,898],[730,718,800,718],[880,718,920,718],
+    [920,568,920,780],[920,870,920,898]
+  ];
+  ffInterior.forEach(([x1,z1,x2,z2])=>addWall(x1,z1,x2,z2,WALL_H,FF_BASE,'wall-ff',ffWalls));
+
+  addFloor(0,0,1280,898,FF_BASE,'floor-ff',ffWalls);
+
+  // ---- roof -------------------------------------------------------------
+  const ROOF_BASE = -(2*WALL_H*SCALE);
+  const roofEls = [];
+  addFloor(0,0,1280,898,ROOF_BASE,'floor-roof',roofEls);
+
+  // ---- camera / interaction ---------------------------------------------
+  let rotX=-24, rotY=-34, dist=1;
+  function apply(){
+    scene.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${dist})`;
+  }
+  apply();
+
+  const panelEl = document.getElementById('panel');
+  let dragging=false, lastX=0, lastY=0;
+  panelEl.addEventListener('pointerdown', e=>{ dragging=true; lastX=e.clientX; lastY=e.clientY; panelEl.setPointerCapture(e.pointerId); });
+  panelEl.addEventListener('pointermove', e=>{
+    if(!dragging) return;
+    const dx=e.clientX-lastX, dy=e.clientY-lastY;
+    lastX=e.clientX; lastY=e.clientY;
+    rotY += dx*0.35;
+    rotX = Math.max(-85, Math.min(-5, rotX - dy*0.35));
+    apply();
+  });
+  panelEl.addEventListener('pointerup', e=>{ dragging=false; });
+  panelEl.addEventListener('pointercancel', ()=>{ dragging=false; });
+  panelEl.addEventListener('wheel', e=>{
+    e.preventDefault();
+    dist = Math.max(0.45, Math.min(2.2, dist - e.deltaY*0.0012));
+    apply();
+  }, {passive:false});
+
+  const stageEl = document.getElementById('stage');
+  const views = {
+    iso:  {x:-24, y:-34, d:1,    p:1900},
+    front:{x:-8,  y:0,   d:1.05, p:1900},
+    top:  {x:-90, y:0,   d:0.55, p:7000}
+  };
+  document.querySelectorAll('[data-view]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('[data-view]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const v=views[btn.dataset.view];
+      rotX=v.x; rotY=v.y; dist=v.d; stageEl.style.perspective=v.p+'px'; apply();
+    });
+  });
+  document.querySelectorAll('[data-floors]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('[data-floors]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode=btn.dataset.floors;
+      gfWalls.forEach(elm=>elm.style.display = (mode==='ff') ? 'none' : '');
+      ffWalls.forEach(elm=>elm.style.display = (mode==='gf') ? 'none' : '');
+      roofEls.forEach(elm=>elm.style.display = (mode==='gf') ? 'none' : '');
+    });
+  });
+  document.querySelectorAll('[data-roof]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const on = btn.textContent.trim()==='Roof on';
+      roofEls.forEach(elm=>elm.style.display = on ? 'none' : '');
+      btn.textContent = on ? 'Roof off' : 'Roof on';
+      btn.classList.toggle('active', !on);
+    });
+  });
+})();
+</script>
