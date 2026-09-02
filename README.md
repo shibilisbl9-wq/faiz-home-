@@ -13,3 +13,11 @@ scroll progress, so scrolling back up plays the whole sequence in reverse.
 - `hero.js` — the scroll → progress → render loop (tunables at the top:
   `REVEAL_END`, `MORPH_START`, `EXTRA_OS`, and the `.reveal` height in the CSS)
 - `fonts/` — Inter (latin subset, variable), self-hosted
+
+## Info grid
+
+Below the hero: how I work (software set + the process line), where I work(ed),
+and communication. One tall panel left, two stacked right, collapsing to a
+single column under 820px. The Adobe marks are drawn as their standard
+monogram tiles; Figma and Microsoft are inline SVG. Blender is a placeholder
+monogram — drop in the real SVG when you have it.
