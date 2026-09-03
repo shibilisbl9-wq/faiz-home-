@@ -1,0 +1,2123 @@
+{
+  "name": "Shibili Nuhman — home",
+  "type": "FRAME",
+  "x": 0,
+  "y": 0,
+  "width": 1440,
+  "height": 1495,
+  "fills": [
+    {
+      "type": "SOLID",
+      "color": {
+        "r": 0.9451,
+        "g": 0.9451,
+        "b": 0.9451
+      }
+    }
+  ],
+  "children": [
+    {
+      "type": "RECTANGLE",
+      "name": "Hero block",
+      "x": 160,
+      "y": 100.8,
+      "width": 1120,
+      "height": 458.55,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        }
+      ],
+      "cornerRadius": 2,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 30
+          },
+          "radius": 80,
+          "spread": 0,
+          "visible": true,
+          "blendMode": "NORMAL"
+        }
+      ]
+    },
+    {
+      "type": "GROUP",
+      "name": "Hero copy",
+      "x": 160,
+      "y": 100.8,
+      "width": 1120,
+      "height": 458.55,
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Word / Hi,",
+          "x": 232,
+          "y": 164.8,
+          "width": 76.81,
+          "height": 66.12,
+          "characters": "Hi,",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / I’m",
+          "x": 320.34,
+          "y": 164.8,
+          "width": 84.28,
+          "height": 66.12,
+          "characters": "I’m",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / Shibili",
+          "x": 232,
+          "y": 230.91,
+          "width": 169.72,
+          "height": 66.12,
+          "characters": "Shibili",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / Nuhman",
+          "x": 413.25,
+          "y": 230.91,
+          "width": 235.89,
+          "height": 66.12,
+          "characters": "Nuhman",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Badge / fill",
+          "x": 660.67,
+          "y": 251.3,
+          "width": 251.78,
+          "height": 42.58,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ],
+          "cornerRadius": 21.29
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Badge / outline",
+          "x": 654.67,
+          "y": 246.3,
+          "width": 264.78,
+          "height": 51.58,
+          "fills": [],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.302,
+                "b": 0.0902
+              }
+            }
+          ],
+          "strokeWeight": 2,
+          "cornerRadius": 25.79,
+          "rotation": 1.1
+        },
+        {
+          "type": "TEXT",
+          "name": "Badge / label",
+          "x": 660.67,
+          "y": 260.69,
+          "width": 251.78,
+          "height": 23.8,
+          "characters": "GRAPHIC DESIGNER",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 20.88,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 23.8
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0.21
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / on",
+          "x": 232,
+          "y": 297.01,
+          "width": 70.44,
+          "height": 66.12,
+          "characters": "on",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / screen.",
+          "x": 313.97,
+          "y": 297.01,
+          "width": 209.36,
+          "height": 66.12,
+          "characters": "screen.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / on",
+          "x": 534.86,
+          "y": 297.01,
+          "width": 70.44,
+          "height": 66.12,
+          "characters": "on",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / paper.",
+          "x": 616.83,
+          "y": 297.01,
+          "width": 177.72,
+          "height": 66.12,
+          "characters": "paper.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / in",
+          "x": 806.08,
+          "y": 297.01,
+          "width": 50.95,
+          "height": 66.12,
+          "characters": "in",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / streets.",
+          "x": 868.56,
+          "y": 297.01,
+          "width": 214,
+          "height": 66.12,
+          "characters": "streets.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / I",
+          "x": 232,
+          "y": 363.13,
+          "width": 15.42,
+          "height": 66.12,
+          "characters": "I",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / really",
+          "x": 258.95,
+          "y": 363.13,
+          "width": 154.73,
+          "height": 66.12,
+          "characters": "really",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / love",
+          "x": 425.22,
+          "y": 363.13,
+          "width": 116.22,
+          "height": 66.12,
+          "characters": "love",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / to",
+          "x": 552.97,
+          "y": 363.13,
+          "width": 55.17,
+          "height": 66.12,
+          "characters": "to",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / make",
+          "x": 619.67,
+          "y": 363.13,
+          "width": 151.19,
+          "height": 66.12,
+          "characters": "make",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / the",
+          "x": 782.39,
+          "y": 363.13,
+          "width": 90.56,
+          "height": 66.12,
+          "characters": "the",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Word / brands",
+          "x": 884.48,
+          "y": 363.13,
+          "width": 194.47,
+          "height": 66.12,
+          "characters": "brands",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "move / m",
+          "x": 232,
+          "y": 429.17,
+          "width": 52.63,
+          "height": 66.12,
+          "characters": "m",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "move / ooo",
+          "x": 284.63,
+          "y": 429.23,
+          "width": 451.95,
+          "height": 66.12,
+          "characters": "ooooooooooooo",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ],
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "color": {
+                "r": 0.169,
+                "g": 0.498,
+                "b": 1,
+                "a": 0.55
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": 22,
+              "spread": 0,
+              "visible": true,
+              "blendMode": "NORMAL"
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "move / ve.",
+          "x": 736.58,
+          "y": 429.17,
+          "width": 86.48,
+          "height": 66.12,
+          "characters": "ve.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 58,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 66.12
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.16
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "GROUP",
+      "name": "Panel / How I work",
+      "x": 160,
+      "y": 688.94,
+      "width": 561,
+      "height": 633.7,
+      "children": [
+        {
+          "type": "RECTANGLE",
+          "name": "Panel / fill",
+          "x": 160,
+          "y": 688.94,
+          "width": 561,
+          "height": 633.7,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "cornerRadius": 2
+        },
+        {
+          "type": "TEXT",
+          "name": "Label",
+          "x": 203.19,
+          "y": 732.13,
+          "width": 474.63,
+          "height": 17,
+          "characters": "How I work",
+          "fontName": {
+            "family": "Inter",
+            "style": "Bold"
+          },
+          "fontSize": 14,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 16.8
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0.98
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.5529,
+                "g": 0.5529,
+                "b": 0.5529
+              }
+            }
+          ]
+        },
+        {
+          "type": "ELLIPSE",
+          "name": "Figma / orange / cap",
+          "x": 220.47,
+          "y": 787.05,
+          "width": 18.72,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.949,
+                "g": 0.3059,
+                "b": 0.1176
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Figma / orange / body",
+          "x": 229.83,
+          "y": 787.05,
+          "width": 9.36,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.949,
+                "g": 0.3059,
+                "b": 0.1176
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "ELLIPSE",
+          "name": "Figma / salmon / cap",
+          "x": 239.19,
+          "y": 787.05,
+          "width": 18.72,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.4471,
+                "b": 0.3843
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Figma / salmon / body",
+          "x": 239.19,
+          "y": 787.05,
+          "width": 9.36,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.4471,
+                "b": 0.3843
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "ELLIPSE",
+          "name": "Figma / purple / cap",
+          "x": 220.47,
+          "y": 805.77,
+          "width": 18.72,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.6353,
+                "g": 0.349,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Figma / purple / body",
+          "x": 229.83,
+          "y": 805.77,
+          "width": 9.36,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.6353,
+                "g": 0.349,
+                "b": 1
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "ELLIPSE",
+          "name": "Figma / blue",
+          "x": 239.19,
+          "y": 805.77,
+          "width": 18.72,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.102,
+                "g": 0.7373,
+                "b": 0.9961
+              }
+            }
+          ]
+        },
+        {
+          "type": "ELLIPSE",
+          "name": "Figma / green / cap",
+          "x": 220.47,
+          "y": 824.49,
+          "width": 18.72,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0392,
+                "g": 0.8118,
+                "b": 0.5137
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Figma / green / body",
+          "x": 229.83,
+          "y": 824.49,
+          "width": 9.36,
+          "height": 18.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0392,
+                "g": 0.8118,
+                "b": 0.5137
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe Illustrator / tile",
+          "x": 289.19,
+          "y": 779.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.2,
+                "g": 0,
+                "b": 0
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe Illustrator / mark",
+          "x": 310.98,
+          "y": 798.33,
+          "width": 28.41,
+          "height": 33.6,
+          "characters": "Ai",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.6039,
+                "b": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe Photoshop / tile",
+          "x": 375.19,
+          "y": 779.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0,
+                "g": 0.1176,
+                "b": 0.2118
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe Photoshop / mark",
+          "x": 394.59,
+          "y": 798.33,
+          "width": 33.19,
+          "height": 33.6,
+          "characters": "Ps",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1922,
+                "g": 0.6588,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe InDesign / tile",
+          "x": 461.19,
+          "y": 779.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.2863,
+                "g": 0.0078,
+                "b": 0.1216
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe InDesign / mark",
+          "x": 484.81,
+          "y": 798.33,
+          "width": 24.73,
+          "height": 33.6,
+          "characters": "Id",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.2,
+                "b": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe After Effects / tile",
+          "x": 547.19,
+          "y": 779.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0.3569
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe After Effects / mark",
+          "x": 565.02,
+          "y": 798.33,
+          "width": 36.34,
+          "height": 33.6,
+          "characters": "Ae",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.6,
+                "g": 0.6,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe Premiere Pro / tile",
+          "x": 203.19,
+          "y": 865.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1647,
+                "g": 0.0235,
+                "b": 0.2039
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe Premiere Pro / mark",
+          "x": 224.73,
+          "y": 884.33,
+          "width": 28.89,
+          "height": 33.6,
+          "characters": "Pr",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9176,
+                "g": 0.4667,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Adobe Lightroom / tile",
+          "x": 289.19,
+          "y": 865.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0,
+                "g": 0.1176,
+                "b": 0.2118
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Adobe Lightroom / mark",
+          "x": 311.94,
+          "y": 884.33,
+          "width": 26.48,
+          "height": 33.6,
+          "characters": "Lr",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1922,
+                "g": 0.6588,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Blender / tile",
+          "x": 375.19,
+          "y": 865.13,
+          "width": 72,
+          "height": 72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1137,
+                "g": 0.0706,
+                "b": 0.0235
+              }
+            }
+          ],
+          "cornerRadius": 15.84
+        },
+        {
+          "type": "TEXT",
+          "name": "Tool / Blender / mark",
+          "x": 398.47,
+          "y": 884.33,
+          "width": 25.42,
+          "height": 33.6,
+          "characters": "Bl",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 28,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 33.6
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.56
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9176,
+                "g": 0.4627,
+                "b": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Microsoft / sq1",
+          "x": 474.15,
+          "y": 878.09,
+          "width": 20.95,
+          "height": 20.95,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.949,
+                "g": 0.3137,
+                "b": 0.1333
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Microsoft / sq2",
+          "x": 499.28,
+          "y": 878.09,
+          "width": 20.95,
+          "height": 20.95,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.498,
+                "g": 0.7294,
+                "b": 0
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Microsoft / sq3",
+          "x": 474.15,
+          "y": 903.22,
+          "width": 20.95,
+          "height": 20.95,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0,
+                "g": 0.6431,
+                "b": 0.9373
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "Tool / Microsoft / sq4",
+          "x": 499.28,
+          "y": 903.22,
+          "width": 20.95,
+          "height": 20.95,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 0.7255,
+                "b": 0
+              }
+            }
+          ],
+          "cornerRadius": 0
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / concept",
+          "x": 203.19,
+          "y": 966.95,
+          "width": 202.34,
+          "height": 46.36,
+          "characters": "concept",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / arrow",
+          "x": 351.02,
+          "y": 966.95,
+          "width": 54.52,
+          "height": 46.36,
+          "characters": "→",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ],
+          "opacity": 0.4
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / direction",
+          "x": 412.91,
+          "y": 966.95,
+          "width": 214.25,
+          "height": 46.36,
+          "characters": "direction",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / arrow",
+          "x": 572.64,
+          "y": 966.95,
+          "width": 54.52,
+          "height": 46.36,
+          "characters": "→",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ],
+          "opacity": 0.4
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / execution",
+          "x": 203.19,
+          "y": 1013.3,
+          "width": 232.44,
+          "height": 46.36,
+          "characters": "execution",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / arrow",
+          "x": 381.11,
+          "y": 1013.3,
+          "width": 54.52,
+          "height": 46.36,
+          "characters": "→",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ],
+          "opacity": 0.4
+        },
+        {
+          "type": "TEXT",
+          "name": "Step / deliver",
+          "x": 443,
+          "y": 1013.3,
+          "width": 123.44,
+          "height": 46.36,
+          "characters": "deliver",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 38,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 46.36
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.95
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Note",
+          "x": 203.19,
+          "y": 1228.11,
+          "width": 474.63,
+          "height": 51.34,
+          "characters": "No switch. No wait. One seamless, reusable workflow from the first sketch to the final export.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Regular"
+          },
+          "fontSize": 16.56,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 25.67
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.3059,
+                "g": 0.3059,
+                "b": 0.3059
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "GROUP",
+      "name": "Panel / Where I work(ed)",
+      "x": 741,
+      "y": 688.94,
+      "width": 539,
+      "height": 299.98,
+      "children": [
+        {
+          "type": "RECTANGLE",
+          "name": "Panel / fill",
+          "x": 741,
+          "y": 688.94,
+          "width": 539,
+          "height": 299.98,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "cornerRadius": 2
+        },
+        {
+          "type": "TEXT",
+          "name": "Label",
+          "x": 784.19,
+          "y": 732.13,
+          "width": 452.63,
+          "height": 17,
+          "characters": "Where I work(ed)",
+          "fontName": {
+            "family": "Inter",
+            "style": "Bold"
+          },
+          "fontSize": 14,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 16.8
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0.98
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.5529,
+                "g": 0.5529,
+                "b": 0.5529
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Years",
+          "x": 784.19,
+          "y": 779.13,
+          "width": 133.55,
+          "height": 85.28,
+          "characters": "4+",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 104,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 85.28
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -4.68
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Company / Zee Real Estate",
+          "x": 943.64,
+          "y": 790,
+          "width": 181.94,
+          "height": 29.5,
+          "characters": "Zee Real Estate",
+          "fontName": {
+            "family": "Inter",
+            "style": "Bold"
+          },
+          "fontSize": 25,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 29.5
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.38
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Company / Dulight FZE",
+          "x": 943.64,
+          "y": 824,
+          "width": 181.94,
+          "height": 29.5,
+          "characters": "Dulight FZE",
+          "fontName": {
+            "family": "Inter",
+            "style": "Bold"
+          },
+          "fontSize": 25,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 29.5
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -0.38
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "NONE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.0431,
+                "g": 0.0431,
+                "b": 0.0431
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Note",
+          "x": 784.19,
+          "y": 894.39,
+          "width": 452.63,
+          "height": 51.34,
+          "characters": "years in Dubai, building brand identities and the content that carries them.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Regular"
+          },
+          "fontSize": 16.56,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 25.67
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.3059,
+                "g": 0.3059,
+                "b": 0.3059
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "GROUP",
+      "name": "Panel / Communication in work",
+      "x": 741,
+      "y": 1008.92,
+      "width": 539,
+      "height": 313.72,
+      "children": [
+        {
+          "type": "RECTANGLE",
+          "name": "Panel / fill",
+          "x": 741,
+          "y": 1008.92,
+          "width": 539,
+          "height": 313.72,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "cornerRadius": 2
+        },
+        {
+          "type": "TEXT",
+          "name": "Label",
+          "x": 784.19,
+          "y": 1052.11,
+          "width": 452.63,
+          "height": 17,
+          "characters": "Communication in work",
+          "fontName": {
+            "family": "Inter",
+            "style": "Bold"
+          },
+          "fontSize": 14,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 16.8
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0.98
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.5529,
+                "g": 0.5529,
+                "b": 0.5529
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Languages",
+          "x": 784.19,
+          "y": 1099.11,
+          "width": 452.63,
+          "height": 99,
+          "characters": "English Arabic Malayalam",
+          "fontName": {
+            "family": "Inter",
+            "style": "Extra Bold"
+          },
+          "fontSize": 45,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 49.5
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": -1.35
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.1686,
+                "g": 0.498,
+                "b": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "name": "Note",
+          "x": 784.19,
+          "y": 1228.11,
+          "width": 452.63,
+          "height": 51.34,
+          "characters": "I read and write English and Arabic. Speaking is limited to English and my native Malayalam.",
+          "fontName": {
+            "family": "Inter",
+            "style": "Regular"
+          },
+          "fontSize": 16.56,
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 25.67
+          },
+          "letterSpacing": {
+            "unit": "PIXELS",
+            "value": 0
+          },
+          "textAlignHorizontal": "LEFT",
+          "textAutoResize": "HEIGHT",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.3059,
+                "g": 0.3059,
+                "b": 0.3059
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
